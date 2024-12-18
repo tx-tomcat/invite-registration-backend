@@ -24,4 +24,10 @@ export class Registration {
 
   @CreateDateColumn()
   createdAt: Date;
+
+  @Column({ default: 'INVITE_CODE' })
+  registrationType: 'NFT' | 'INVITE_CODE';
+
+  @Column({ nullable: true })
+  tokenId?: number;
 }

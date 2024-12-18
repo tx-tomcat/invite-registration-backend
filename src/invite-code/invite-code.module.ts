@@ -7,6 +7,7 @@ import { InviteController } from './invite-code.controller';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { RedisModule } from '@nestjs-modules/ioredis';
 import { Registration } from './entities/registration.entity';
+import { NftService } from './nft.service';
 
 @Module({
   imports: [
@@ -24,6 +25,6 @@ import { Registration } from './entities/registration.entity';
     }),
   ],
   controllers: [InviteController],
-  providers: [InviteCodeService],
+  providers: [InviteCodeService, NftService],
 })
 export class InviteCodeModule {}
